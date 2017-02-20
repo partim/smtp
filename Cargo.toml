@@ -1,0 +1,11 @@
+[package]
+name = "smtp"
+version = "0.1.0"
+authors = ["Martin Hoffmann <hn@nvnc.de>"]
+
+[dependencies]
+futures    = "0.1.10"
+log        = "0.3"
+tokio-core = "0.1.4"
+
+abnf = { git = "https://github.com/cloudshipping/abnf" }

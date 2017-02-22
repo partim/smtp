@@ -6,6 +6,8 @@ authors = ["Martin Hoffmann <hn@nvnc.de>"]
 [dependencies]
 futures    = "0.1.10"
 log        = "0.3"
-tokio-core = "0.1.4"
+#tokio-core = "0.1.4"
+tokio-core = { git = "https://github.com/tokio-rs/tokio-core.git" }
 
 abnf = { git = "https://github.com/cloudshipping/abnf" }
+

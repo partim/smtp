@@ -1276,6 +1276,28 @@ impl From<token::TokenError> for CommandError {
 }
 
 
+//============ Mail Data Handling ============================================
+
+pub fn split_mail_data(buf: &mut EasyBuf) -> Option<EasyBuf> {
+    let mut pos = None;
+    for (i, slice) in buf.as_slice().windows(5).enumerate() {
+        if slice == b"\r\n.\r\n" {
+            pos = Some(i);
+            break;
+        }
+    }
+    match pos {
+        Some(pos) => {
+            // The first CRLF is considered part of the data.
+            let res = buf.drain_to(pos + 2);
+            buf.drain_to(3);
+            Some(res)
+        }
+        None => None
+    }
+}
+
+
 //============ Testing ======================================================
 
 #[cfg(test)]

@@ -4,10 +4,16 @@ version = "0.1.0"
 authors = ["Martin Hoffmann <hn@nvnc.de>"]
 
 [dependencies]
-futures    = "0.1.10"
-log        = "0.3"
-#tokio-core = "0.1.4"
-tokio-core = { git = "https://github.com/tokio-rs/tokio-core.git" }
+futures       = "0.1.10"
+log           = "0.3"
+native-tls    = "0.1.1"
+#tokio-core    = "0.1.4"
+#tokio-proto   = "0.1.0"
+tokio-core    = { git = "https://github.com/cloudshipping/tokio-core.git" }
+tokio-proto   = { git = "https://github.com/cloudshipping/tokio-proto.git" }
+tokio-service = "0.1.0"
+#tokio-tls     = "0.1.1"
+tokio-tls     = { git = "https://github.com/cloudshipping/tokio-tls.git" }
 
 abnf = { git = "https://github.com/cloudshipping/abnf" }
 
